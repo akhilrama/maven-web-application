@@ -18,7 +18,7 @@ public class EmployeeService {
 	
 	@RequestMapping(value = "/getEmployeeDetails", method = RequestMethod.GET)
 	@ResponseBody
-	String uploadImage(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
+	public String uploadImage(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
 			throws JSONException {
 
 		JSONObject js = new JSONObject();
@@ -27,7 +27,22 @@ public class EmployeeService {
 		js.put("DOB", "08-Nov-2011");
 		js.put("Hobbies", "Reading Technical Blogs,Teaching, Helping to Poor People..");
 		js.put("Places he like", "His native place");
-
+		System.out.println("output: "+js.toString());
 		return js.toString();
-}
+	}
+	
+	public String downloadImage(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
+			throws JSONException {
+
+		JSONObject js = new JSONObject();
+		js.put("Name", "Mithun Technologies");
+		js.put("Calling Name", "Mithun");
+		js.put("DOB", "08-Nov-2011");
+		js.put("Hobbies", "Reading Technical Blogs,Teaching, Helping to Poor People..");
+		js.put("Places he like", "His native place");
+		System.out.println("output: "+js.toString());
+		return js.toString();
+	}
+	
+	
 }
